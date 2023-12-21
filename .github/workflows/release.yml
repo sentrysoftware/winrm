@@ -1,0 +1,27 @@
+# This workflow releases the project on Maven Central
+# and prepare a new development version
+
+name: Release to Maven Central
+run-name: Release v${{ inputs.releaseVersion }} to Maven Central
+
+on:
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: "Release version"
+        required: true
+        default: ""
+      developmentVersion:
+        description: "New SNAPSHOT version"
+        required: true
+        default: ""
+
+jobs:
+  release:
+    uses: sentrysoftware/workflows/.github/workflows/maven-central-release.yml@main
+    with:
+      releaseVersion: ${{ inputs.releaseVersion }}
+      developmentVersion: ${{ inputs.developmentVersion }}
+      autoRelease: false
+      jdkVersion: "17"
+    secrets: inherit
