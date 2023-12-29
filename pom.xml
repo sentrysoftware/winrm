@@ -2,18 +2,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.sentrysoftware</groupId>
-	<artifactId>MYARTIFACT</artifactId>
-	<name>MY PROJECT</name>
-	<version>0.1.00-SNAPSHOT</version>
-	<description>SOME DESCRIPTION</description>
-  <packaging>jar</packaging>
+	<artifactId>WinRM</artifactId>
+	<name>WinRM Java Client</name>
+	<version>1.0.00-SNAPSHOT</version>
+	<description>WinRM Java Client</description>
+	<packaging>jar</packaging>
 
 	<organization>
 		<name>Sentry Software</name>
 		<url>https://sentrysoftware.com</url>
 	</organization>
 
-	<url>https://github.com/sentrysoftware/MYREPO</url>
+	<url>https://sentrysoftware.github.io/winrm</url>
 	<inceptionYear>2023</inceptionYear>
 
 	<distributionManagement>
@@ -29,38 +29,57 @@
 
 	<licenses>
 		<license>
-			<name>Apache-2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<name>LGPL-3.0</name>
+			<url>https://www.gnu.org/licenses/lgpl+gpl-3.0.txt</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/sentrysoftware/MYREPO/issues/</url>
+		<url>https://github.com/sentrysoftware/winrm/issues/</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:https://github.com/sentrysoftware/MYREPO.git</connection>
-		<url>https://github.com/sentrysoftware/MYREPO</url>
+		<connection>scm:git:https://github.com/sentrysoftware/winrm.git</connection>
+		<url>https://github.com/sentrysoftware/winrm</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
 		<developer>
-			<name>MY NAME (@MY_ID)</name>
-			<email>MYNAME@sentrysoftware.com</email>
+			<name>Bertrand Martin (@bertysentry)</name>
+			<email>bertrand@sentrysoftware.com</email>
 			<roles>
-				<role>Project founder</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Nassim BOUTEKEDJIRET (@NassimBtk)</name>
+			<email>nassim@sentrysoftware.com</email>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Kawtar Bakour (@KawtarBK9)</name>
+			<email>kawtar@sentrysoftware.com</email>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Elyes Cherfa (@CherfaElyes)</name>
+			<email>elyes@sentrysoftware.com</email>
+			<roles>
+				<role>maintainer</role>
 			</roles>
 		</developer>
 	</developers>
 
 	<properties>
-		<!-- Java 11 -->
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.release>11</maven.compiler.release>
+		<!-- Java 8 -->
+		<maven.compiler.release>8</maven.compiler.release>
 
 		<!-- UTF-8 -->
 		<project.build.encoding>UTF-8</project.build.encoding>
@@ -95,6 +114,37 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-hc</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hierynomus</groupId>
+			<artifactId>smbj</artifactId>
+			<version>0.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>5.2.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.36</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -106,7 +156,7 @@
 				<!-- javadoc -->
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.6.2</version>
+					<version>3.6.0</version>
 					<configuration>
 						<detectJavaApiLink>false</detectJavaApiLink>
 						<source>${maven.compiler.target}</source>
@@ -114,13 +164,38 @@
 						<notimestamp>true</notimestamp>
 					</configuration>
 				</plugin>
-
 			</plugins>
 		</pluginManagement>
 
 		<!-- Actual build plugins -->
 		<plugins>
-
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>import-wsdl</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<extension>true</extension>
+							<keep>true</keep>
+							<xnocompile>true</xnocompile>
+							<bindingFiles>
+								<bindingFile>${basedir}/src/main/resources/jaxws/bindings.xml</bindingFile>
+							</bindingFiles>
+							<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
+							<args>
+								<arg>-clientjar</arg>
+								<arg>${project.build.directory}/wsdl.jar</arg>
+							</args>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- compiler -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -153,7 +228,7 @@
 				<artifactId>license-maven-plugin</artifactId>
 				<version>2.3.0</version>
 				<configuration>
-					<licenseName>apache_v2</licenseName>
+					<licenseName>lgpl_v3</licenseName>
 					<copyrightOwners>Sentry Software</copyrightOwners>
 					<copyrightStringFormat>Copyright %1$s %2$s</copyrightStringFormat>
 					<includes>
@@ -183,6 +258,9 @@
 			<!-- javadoc -->
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<doclint>all,-missing</doclint>
+				</configuration>
 				<executions>
 					<execution>
 							<id>attach-javadocs</id>
@@ -196,7 +274,7 @@
 			<!-- surefire -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.2</version>
+				<version>3.2.3</version>
 			</plugin>
 
 			<!-- site -->
@@ -266,7 +344,7 @@
 			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>4.7.3.6</version>
+				<version>4.8.2.0</version>
 			</plugin>
 
 			<!-- changelog -->
@@ -278,7 +356,15 @@
 			<!-- surefire -->
 			<plugin>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.2.2</version>
+				<version>3.2.3</version>
+				<configuration>
+					<forkCount>1</forkCount>
+					<reuseForks>false</reuseForks>
+					<argLine>
+						--add-exports java.base/sun.net.www.protocol.http=ALL-UNNAMED
+						--add-exports java.base/sun.security.ssl=ALL-UNNAMED
+					</argLine>
+				</configuration>
 			</plugin>
 
 			<!-- javadoc -->
@@ -296,7 +382,7 @@
 			<!-- Default project-info-reports -->
 			<plugin>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>3.4.5</version>
+				<version>3.5.0</version>
 			</plugin>
 
 		</plugins>
@@ -304,7 +390,7 @@
 
 	<profiles>
 
-			<!-- Profile for releasing the project -->
+		<!-- Profile for releasing the project -->
 		<profile>
 			<id>release</id>
 			<build>
