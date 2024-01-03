@@ -1,4 +1,4 @@
-package org.sentrysoftware.winrm.service.client.encryption;
+package org.sentrysoftware.winrm;
 
 /*-
  * ╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲
@@ -20,26 +20,12 @@ package org.sentrysoftware.winrm.service.client.encryption;
  * ╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱
  */
 
-import org.apache.cxf.interceptor.StaxInInterceptor;
-import org.apache.cxf.message.Message;
-import org.apache.cxf.phase.AbstractPhaseInterceptor;
-import org.apache.cxf.phase.Phase;
-
 /**
- * Code from io.cloudsoft.winrm4j.client.encryption.DecryptAndVerifyInInterceptor
- * release 0.12.3 @link https://github.com/cloudsoft/winrm4j
+ * Enumeration for protocol to use.
  */
-public class DecryptAndVerifyInInterceptor extends AbstractPhaseInterceptor<Message> {
+public enum WinRMHttpProtocolEnum {
 
-	public DecryptAndVerifyInInterceptor() {
-		super(Phase.POST_STREAM);
-		addBefore(StaxInInterceptor.class.getName());
-	}
+	HTTP,
+	HTTPS;
 
-	public void handleMessage(final Message message) {
-		final NtlmEncryptionUtils ntlmEncryptionUtils = NtlmEncryptionUtils.of(message);
-		if (ntlmEncryptionUtils != null) {
-			ntlmEncryptionUtils.decrypt(message);
-		}
-	}
 }

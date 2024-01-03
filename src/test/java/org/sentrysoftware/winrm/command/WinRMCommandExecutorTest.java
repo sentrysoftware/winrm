@@ -1,6 +1,6 @@
 package org.sentrysoftware.winrm.command;
 
-import static org.sentrysoftware.winrm.HttpProtocolEnum.HTTPS;
+import static org.sentrysoftware.winrm.WinRMHttpProtocolEnum.HTTPS;
 import static org.sentrysoftware.winrm.WindowsRemoteProcessUtils.copyLocalFilesToShare;
 import static org.sentrysoftware.winrm.WindowsRemoteProcessUtils.getWindowsEncodingCharset;
 import static org.sentrysoftware.winrm.command.WinRMCommandExecutor.execute;

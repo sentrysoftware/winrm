@@ -1,6 +1,6 @@
 package org.sentrysoftware.winrm.service.client;
 
-import static org.sentrysoftware.winrm.HttpProtocolEnum.HTTPS;
+import static org.sentrysoftware.winrm.WinRMHttpProtocolEnum.HTTPS;
 import static org.sentrysoftware.winrm.Utils.EMPTY;
 import static org.sentrysoftware.winrm.Utils.checkNonNull;
 import static org.sentrysoftware.winrm.Utils.checkNonNullField;

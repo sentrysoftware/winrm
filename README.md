@@ -5,7 +5,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/sentrysoftware/winrm)
 ![License](https://img.shields.io/github/license/sentrysoftware/winrm)
 
-This project is a fork of the excellent [WS-Man Client](https://github.com/OpenNMS/wsman) and [winrm4j](https://github.com/cloudsoft/winrm4j/)
+This project uses [WS-Man Client](https://github.com/OpenNMS/wsman) and [winrm4j](https://github.com/cloudsoft/winrm4j/)
 
 See **[Project Documentation](https://sentrysoftware.github.io/winrm)** and the [Javadoc](https://sentrysoftware.github.io/winrm/apidocs) for more information on how to use this library in your code.
 

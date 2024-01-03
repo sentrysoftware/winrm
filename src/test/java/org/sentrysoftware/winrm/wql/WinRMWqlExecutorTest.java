@@ -1,6 +1,6 @@
 package org.sentrysoftware.winrm.wql;
 
-import static org.sentrysoftware.winrm.HttpProtocolEnum.HTTPS;
+import static org.sentrysoftware.winrm.WinRMHttpProtocolEnum.HTTPS;
 import static java.nio.file.Paths.get;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
