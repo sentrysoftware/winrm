@@ -23,7 +23,7 @@ Use it as follows:
 ```Java
 import static java.nio.file.Paths.get;
 import static java.util.Collections.singletonList;
-import static org.sentrysoftware.winrm.HttpProtocolEnum.HTTP;
+import static org.sentrysoftware.winrm.WinRMHttpProtocolEnum.HTTP;
 import static org.sentrysoftware.winrm.service.client.auth.AuthenticationEnum.NTLM;
 import static org.sentrysoftware.winrm.wql.WinRMWqlExecutor.executeWql;
 
