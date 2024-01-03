@@ -1,7 +1,7 @@
 # WinRM Java Client
 
 The Windows Remote Management (WinRM) Java Client is a library that enables to:
-* Connect to a remote Windows server using one of theh two authentication types (NTLM, KERBEROS)
+* Connect to a remote Windows server using one of the two authentication types (NTLM, KERBEROS)
 * Execute WMI Query Language (WQL) queries which uses HTTP/HTTPS protocols.
 
 # How to run the WinRM Client inside Java
