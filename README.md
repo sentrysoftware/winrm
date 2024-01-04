@@ -10,7 +10,7 @@ This project uses [WS-Man Client](https://github.com/OpenNMS/wsman) and [winrm4j
 See **[Project Documentation](https://sentrysoftware.github.io/winrm)** and the [Javadoc](https://sentrysoftware.github.io/winrm/apidocs) for more information on how to use this library in your code.
 
 The Windows Remote Management (WinRM) Java Client is a library that enables to:
-* Connect to a remote Windows server using one of theh two authentication types (NTLM, KERBEROS)
+* Connect to a remote Windows server using one of the two authentication types (NTLM, KERBEROS)
 * Execute WMI Query Language (WQL) queries which uses HTTP/HTTPS protocols.
 
 ## Build instructions
