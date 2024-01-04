@@ -37,7 +37,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.sentrysoftware.winrm.Utils;
 import org.sentrysoftware.winrm.exceptions.WindowsRemoteException;
 import org.sentrysoftware.winrm.exceptions.WqlQuerySyntaxException;
 

@@ -34,8 +34,8 @@ import org.apache.cxf.jaxb.JAXBDataBinding;
 import org.apache.cxf.phase.Phase;
 
 import org.sentrysoftware.winrm.Utils;
-import com.sentrysoftware.matsya.winrm.service.wsman.AttributableURI;
-import com.sentrysoftware.matsya.winrm.service.wsman.ObjectFactory;
+import org.sentrysoftware.winrm.service.wsman.AttributableURI;
+import org.sentrysoftware.winrm.service.wsman.ObjectFactory;
 
 /**
  * Code from org.opennms.core.wsman.cxf.WSManHeaderInterceptor

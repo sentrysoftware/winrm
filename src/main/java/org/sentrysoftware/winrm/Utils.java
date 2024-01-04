@@ -120,7 +120,7 @@ public class Utils {
 	 * @param name
 	 * @throws IllegalArgumentException if the argument is null
 	 */
-	public static <T> void checkNonBlank(final String argument, final String name) {
+	public static void checkNonBlank(final String argument, final String name) {
 		if (isBlank(argument)) {
 			throw new IllegalArgumentException(name + " must not be null or empty.");
 		}

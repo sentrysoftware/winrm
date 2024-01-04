@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.sentrysoftware</groupId>
-	<artifactId>WinRM</artifactId>
+	<artifactId>winrm</artifactId>
 	<name>WinRM Java Client</name>
 	<version>1.0.00-SNAPSHOT</version>
 	<description>WinRM Java Client</description>
@@ -139,11 +139,6 @@
 			<artifactId>mockito-inline</artifactId>
 			<version>5.2.0</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.36</version>
 		</dependency>
 	</dependencies>
 

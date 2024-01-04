@@ -80,9 +80,6 @@ import org.sentrysoftware.winrm.service.client.encryption.AsyncHttpEncryptionAwa
 import org.sentrysoftware.winrm.service.client.encryption.DecryptAndVerifyInInterceptor;
 import org.sentrysoftware.winrm.service.client.encryption.SignAndEncryptOutInterceptor;
 
-import com.sentrysoftware.matsya.winrm.service.WinRMWebService;
-import com.sentrysoftware.matsya.winrm.service.WinRMWebServiceClient;
-
 public class WinRMInvocationHandler implements InvocationHandler {
 
 	public static final String WSMAN_SCHEMA_NAMESPACE = "http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd";

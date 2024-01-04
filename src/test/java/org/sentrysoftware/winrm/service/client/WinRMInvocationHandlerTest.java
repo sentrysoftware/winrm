@@ -66,7 +66,7 @@ import org.sentrysoftware.winrm.service.client.auth.kerberos.KerberosUtils;
 import org.sentrysoftware.winrm.service.client.auth.ntlm.NTCredentialsWithEncryption;
 
 import org.sentrysoftware.winrm.Utils;
-import com.sentrysoftware.matsya.winrm.service.WinRMWebService;
+import org.sentrysoftware.winrm.service.WinRMWebService;
 
 class WinRMInvocationHandlerTest {
 

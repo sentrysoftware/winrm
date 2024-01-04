@@ -39,20 +39,20 @@ import org.sentrysoftware.winrm.wql.WinRMWqlExecutor;
 public class Main {
 
 	public static void main(String[] args) throws WinRMException, WqlQuerySyntaxException, TimeoutException {
-	
+
 		final String wqlQuery = "SELECT Name, Path, Type FROM Win32_Share";
 		final String hostname = "my-hostname-or-ip-address";
 		final String username = "my-username";
 		final char[] password = "my-password".toCharArray();
 		final long timeout = 50 * 1000L; // in milliseconds
 		final Path ticketCache = get("path");
-        
-        // Authentication type : NTLM or KERBEROS
+
+		// Authentication type : NTLM or KERBEROS
 		final List<AuthenticationEnum> authentications = singletonList(NTLM);
 
-        // Execute a WQL Query in the hostname and print the result
-		executeWql(HTTP, hostname, 5985, username, password, null, wqlQuery, timeout,
-				ticketCache, authentications).getRows().forEach(System.out::println);
+		// Execute a WQL Query in the hostname and print the result
+		executeWql(HTTP, hostname, 5985, username, password, null, wqlQuery, timeout, ticketCache, authentications)
+				.getRows().forEach(System.out::println);
 
 	}
 }

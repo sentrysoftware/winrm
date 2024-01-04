@@ -41,10 +41,10 @@ import org.sentrysoftware.winrm.exceptions.WqlQuerySyntaxException;
 import org.sentrysoftware.winrm.service.client.WinRMInvocationHandler;
 import org.sentrysoftware.winrm.service.client.auth.AuthenticationEnum;
 
-import com.sentrysoftware.matsya.winrm.service.enumeration.EnumerateResponse;
-import com.sentrysoftware.matsya.winrm.service.enumeration.EnumerationContextType;
-import com.sentrysoftware.matsya.winrm.service.transfer.ResourceCreated;
-import com.sentrysoftware.matsya.winrm.service.wsman.SelectorSetType;
+import org.sentrysoftware.winrm.service.enumeration.EnumerateResponse;
+import org.sentrysoftware.winrm.service.enumeration.EnumerationContextType;
+import org.sentrysoftware.winrm.service.transfer.ResourceCreated;
+import org.sentrysoftware.winrm.service.wsman.SelectorSetType;
 
 class WinRMServiceTest {
 
