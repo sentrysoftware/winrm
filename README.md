@@ -1,11 +1,17 @@
-# oss-maven-template
+# WinRM Java Client
 
-![GitHub release (with filter)](https://img.shields.io/github/v/release/sentrysoftware/oss-maven-template)
-![Build](https://img.shields.io/github/actions/workflow/status/sentrysoftware/oss-maven-template/deploy.yml)
-![GitHub top language](https://img.shields.io/github/languages/top/sentrysoftware/oss-maven-template)
-![License](https://img.shields.io/github/license/sentrysoftware/oss-maven-template)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/sentrysoftware/winrm)
+![Build](https://img.shields.io/github/actions/workflow/status/sentrysoftware/winrm/deploy.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/sentrysoftware/winrm)
+![License](https://img.shields.io/github/license/sentrysoftware/winrm)
 
-Repository template for all Sentry open-source Java projects, published on Maven Central.
+This project uses [WS-Man Client](https://github.com/OpenNMS/wsman) and [winrm4j](https://github.com/cloudsoft/winrm4j/)
+
+See **[Project Documentation](https://sentrysoftware.github.io/winrm)** and the [Javadoc](https://sentrysoftware.github.io/winrm/apidocs) for more information on how to use this library in your code.
+
+The Windows Remote Management (WinRM) Java Client is a library that enables to:
+* Connect to a remote Windows server using one of theh two authentication types (NTLM, KERBEROS)
+* Execute WMI Query Language (WQL) queries which uses HTTP/HTTPS protocols.
 
 ## Build instructions
 
