@@ -20,8 +20,9 @@ package org.sentrysoftware.winrm;
  * ╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱
  */
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -119,7 +120,7 @@ public class WqlQuery {
 		if (Utils.isNotBlank(propertiesFragment)) {
 			return Arrays.asList(propertiesFragment.trim().toLowerCase().split("\\s*,\\s*"));
 		}
-		return Collections.emptyList();
+		return new ArrayList<>();
 	}
 
 	/**
@@ -143,7 +144,7 @@ public class WqlQuery {
 
 		// Empty or null?
 		if (properties == null || properties.isEmpty()) {
-			return Collections.emptyMap();
+			return new HashMap<>();
 		}
 
 		Map<String, Set<String>> subPropertiesMap = new LinkedHashMap<>();
