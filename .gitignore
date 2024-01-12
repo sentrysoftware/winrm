@@ -28,6 +28,12 @@ replay_pid*
 .classpath
 .settings/
 
+# IntelliJ IDEA files
+*.iml
+.idea/
+*.iws
+*.ipr
+
 # Maven
 target/
 pom.xml.tag
