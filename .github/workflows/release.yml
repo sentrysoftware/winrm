@@ -18,7 +18,7 @@ on:
 
 jobs:
   release:
-    uses: sentrysoftware/workflows/.github/workflows/maven-central-release.yml@main
+    uses: sentrysoftware/workflows/.github/workflows/maven-central-release.yml@v3
     with:
       releaseVersion: ${{ inputs.releaseVersion }}
       developmentVersion: ${{ inputs.developmentVersion }}
