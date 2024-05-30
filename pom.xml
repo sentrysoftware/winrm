@@ -351,7 +351,7 @@
 			<!-- surefire -->
 			<plugin>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.2.3</version>
+				<version>3.2.5</version>
 				<configuration>
 					<forkCount>1</forkCount>
 					<reuseForks>false</reuseForks>
