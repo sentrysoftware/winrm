@@ -9,7 +9,7 @@
 
 	<groupId>org.sentrysoftware</groupId>
 	<artifactId>winrm</artifactId>
-	<version>1.1.00</version>
+	<version>1.1.01-SNAPSHOT</version>
 
 	<name>WinRM Java Client</name>
 	<description>WinRM Java Client</description>
@@ -38,7 +38,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/sentrysoftware/winrm.git</connection>
 		<url>https://github.com/sentrysoftware/winrm</url>
-		<tag>v1.1.00</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
@@ -78,7 +78,7 @@
 
 		<!-- Reproducible Build -->
 		<!-- See https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
-		<project.build.outputTimestamp>2025-02-13T17:09:41Z</project.build.outputTimestamp>
+		<project.build.outputTimestamp>2025-02-13T17:10:49Z</project.build.outputTimestamp>
 	</properties>
 
 	<dependencyManagement>
