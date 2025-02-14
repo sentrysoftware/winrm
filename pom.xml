@@ -160,9 +160,6 @@
 							<goal>wsdl2java</goal>
 						</goals>
 						<configuration>
-							<force>true</force>
-							<verbose>true</verbose>
-							<failOnError>true</failOnError>
 							<sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
