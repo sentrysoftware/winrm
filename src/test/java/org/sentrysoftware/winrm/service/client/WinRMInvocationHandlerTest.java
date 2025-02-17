@@ -41,9 +41,9 @@ import java.util.List;
 import java.util.Queue;
 import java.util.stream.Collectors;
 
-import javax.xml.soap.SOAPFactory;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.soap.SOAPFaultException;
+import jakarta.xml.soap.SOAPFactory;
+import jakarta.xml.ws.WebServiceException;
+import jakarta.xml.ws.soap.SOAPFaultException;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.endpoint.Client;
