@@ -121,7 +121,7 @@ public class AsyncHttpEncryptionAwareConduit extends AsyncHTTPConduit {
 		final BasicHttpEntity entity = new EncryptionAwareHttpEntity() {
 			@Override
 			public boolean isRepeatable() {
-				return requestEntity.getOutputStream().retransmitable();
+				return requestEntity.getEntity().isRepeatable();
 			}
 
 			@Override

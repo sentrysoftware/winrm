@@ -29,7 +29,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.sentrysoftware.winrm.exceptions.KerberosCredentialsException;
-import org.sentrysoftware.winrm.service.client.auth.kerberos.KerberosUtils;
 
 class KerberosUtilsTest {
 
